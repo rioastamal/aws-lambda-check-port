@@ -42,7 +42,7 @@ change few settings. Here are the settings that I use:
 * **Role**: Basic execution role
 
 Emulate the input of the script by specify on the "Input test event" by clicking
-Actions > Configure test event, then input the data below:
+Actions > Configure test event. Below is example of the test data.
 
 ```
 {
