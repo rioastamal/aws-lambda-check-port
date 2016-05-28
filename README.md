@@ -10,6 +10,8 @@ online editor.
 
 ## Run the Script
 
+### Via Command Line
+
 The script can be run locally using node command line. If the script
 invoked directly you need to pass the argument using environment
 variables.
@@ -29,6 +31,33 @@ $ export MY_PORT=1919
 $ node index.js
 Whoops port 1919 on host `localhost` seems closed!
 ```
+
+### Via AWS Lambda
+
+Assuming all your AWS Lambda permissions setting is correct, you only need to
+change few settings. Here are the settings that I use:
+
+* **Runtime**: Node.js 4.3
+* **Handler**: index.checkPortOpen
+* **Role**: Basic execution role
+
+Emulate the input of the script by specify on the "Input test event" by clicking
+Actions > Configure test event, then input the data below:
+
+```
+{
+    "context": {
+        "my-host": "172.31.0.10",
+        "my-port": 3307,
+        "my-timeout": 75
+    }
+}
+```
+
+Change `my-host` and `my-port` to anything else, could be any address on the internet
+or host inside your VPC (but make sure firewall and settings are correct).
+
+Try to run the test to see the output.
 
 ## License
 
