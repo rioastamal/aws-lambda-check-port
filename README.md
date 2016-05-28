@@ -4,6 +4,10 @@ A simple NodeJS script to check whether port on particular host is open
 or closed. This script designed in mind to work on AWS Lambda Service.
 So the arguments follow the requirements used by AWS Lambda.
 
+This script only uses node core libraries so it has zero dependencies
+and could be run directly on AWS Lambda by just copy-paste to the
+online editor.
+
 ## Run the Script
 
 The script can be run locally using node command line. If the script
